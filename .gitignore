@@ -1,0 +1,5 @@
+node_modules/
+frontend/dist/
+services/*/data/
+npm-debug.log*
+.DS_Store

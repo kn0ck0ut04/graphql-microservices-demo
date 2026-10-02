@@ -1,0 +1,1 @@
+{"name":"graphql-gateway","private":true,"type":"module","scripts":{"start":"node index.js"},"dependencies":{"@apollo/gateway":"^2.14.4","@apollo/server":"^5.5.1","graphql":"^16.11.0"}}

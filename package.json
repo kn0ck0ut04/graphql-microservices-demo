@@ -1,0 +1,20 @@
+{
+  "name": "graphql-microservices-demo",
+  "private": true,
+  "workspaces": [
+    "services/*",
+    "gateway",
+    "frontend"
+  ],
+  "scripts": {
+    "start": "concurrently -k -n users,products,orders,gateway,frontend -c blue,green,yellow,magenta,cyan \"npm run start --workspace=users-service\" \"npm run start --workspace=products-service\" \"npm run start --workspace=orders-service\" \"npm run start --workspace=graphql-gateway\" \"npm run start --workspace=graphql-frontend\"",
+    "check": "node scripts/demo-check.mjs",
+    "postinstall": "npm rebuild better-sqlite3"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "allowScripts": {
+    "better-sqlite3": true
+  }
+}
